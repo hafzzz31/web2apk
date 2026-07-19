@@ -1,4 +1,4 @@
-        name: Flutter Build APK
+name: Flutter Build APK
 
 on:
   workflow_dispatch:
@@ -63,6 +63,29 @@ jobs:
           java-version: '17'
 
       - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+          flutter-version: ${{ github.event.inputs.flutter_version }}
+
+      - name: Flutter pub get
+        run: flutter pub get
+
+      - name: Build APK release
+        run: flutter build apk --release
+
+      - name: Rename & move APK
+        run: |
+          mkdir -p output
+          cp build/app/outputs/flutter-apk/app-release.apk output/app-release-$(date +'%Y%m%d-%H%M').apk
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: APK-Release-${{ github.run_number }}
+          path: output/*.apk
+          retention-days: 90
         uses: subosito/flutter-action@v2
         with:
           channel: stable
