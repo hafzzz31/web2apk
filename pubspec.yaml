@@ -1,0 +1,87 @@
+name: Ray
+description: "Rangers"
+publish_to: 'none'
+version: 2.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Core
+  http: ^1.2.2                    # UPDATED dari 0.13.5
+  intl: ^0.19.0
+  crypto: ^3.0.6                  # UPDATED
+  socket_io_client: any
+  
+  # UI
+  cupertino_icons: ^1.0.8
+  carousel_slider: ^4.2.1         # UPDATED
+  font_awesome_flutter: ^11.0.0
+  
+  # Storage & Device
+  shared_preferences: ^2.3.3      # UPDATED
+  path_provider: ^2.1.5           # UPDATED
+  device_info_plus: ^11.2.0       # UPDATED
+  
+  # Network
+  web_socket_channel: ^3.0.1      # UPDATED
+  network_info_plus: ^6.1.0       # UPDATED
+  
+  # Media
+  image_picker: ^1.1.2            # UPDATED
+  video_player: ^2.9.3            # UPDATED
+  chewie: ^1.8.5                  # UPDATED
+  audioplayers: ^6.1.0            # UPDATED
+  
+  # Native Features
+  url_launcher: ^6.2.5            # UPDATED
+  permission_handler: ^11.3.1     # UPDATED
+  share_plus: ^10.1.2             # UPDATED
+  geolocator: ^13.0.2
+  
+  # ⚡ WEBVIEW - FIXED VERSION ⚡
+  webview_flutter: ^4.13.1        # STABLE VERSION, SUPPORT SDK 21
+  icons_plus: ^5.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.1 # UPDATED
+
+# ICON CONFIG - FIXED
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: assets/icon/icon.jpg
+  min_sdk_android: 24  # ⚡ HARUS 24 UNTUK WEBVIEW 4.x
+  adaptive_icon_background: "#000000"
+  adaptive_icon_foreground: assets/icon/icon.jpg
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/videos/
+    # Atau spesifik satu-satu
+    - assets/images/logo.jpg
+    - assets/images/hoxten.jpg
+    - assets/images/logo.png
+    - assets/images/Rangers.png
+    - assets/videos/landing.mp4
+    - assets/videos/splash.mp4
+    - assets/videos/banner.mp4
+    - assets/videos/hoxten.mp4
+    - assets/videos/rdvsp.mp4    
+
+  fonts:
+    - family: Orbitron
+      fonts:
+        - asset: fonts/Orbitron-Regular.ttf
+    - family: ShareTechMono
+      fonts:
+        - asset: fonts/ShareTechMono-Regular.ttf
